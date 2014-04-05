@@ -1,0 +1,17 @@
+John Smith
+800 West Main Street
+Pewaukee, WI 53072
+jsmith@outlook.com
+(999)-987-1141
+
+Jeff Smith
+824 Jimmy Street
+Pewaukee, WI 53072
+jsmith@outlook.com
+(999)-987-6845
+
+Angie Smith
+1102 Augusta Blvd.
+Pewaukee, WI 53072
+asmith@outlook.com
+(999)-987-8795
