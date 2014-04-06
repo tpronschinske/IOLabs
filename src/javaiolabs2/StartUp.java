@@ -23,7 +23,8 @@ public class StartUp {
         Scanner keyboard = new Scanner(System.in);
         List<String> info = new ArrayList<>();
         File data = new File("C:\\lab01file.txt");
-        String formattedInfo = null;
+        String formattedInfo = "";
+        int userSelection;
         
         BufferedReader in = null;
         try {
@@ -31,11 +32,7 @@ public class StartUp {
             String line = in.readLine();
             while (line != null) {         
                 info.add(line);
-                for(String line1: info){ // attempted format for arrayList in order to outprint the result...not working???
-                    formattedInfo += line1 + "\n";
-                }
-                line = in.readLine();  // strips out any carriage return chars
-                
+                line = in.readLine();  // strips out any carriage return chars    
             }
            
         } catch (IOException ioe) {
@@ -47,27 +44,39 @@ public class StartUp {
 
             }
         }
-        List<String> one = info.subList(1, 5);
-        List<String> two = info.subList(7, 11);
-        List<String> three = info.subList(13, 17);
-      
-        String userInput;        
-        int userSelection;
-
         System.out.println("Please Enter Record Access Number: ");
         userSelection = keyboard.nextInt();
 
         switch (userSelection) {
             case 1:
-                System.out.println(one);
+                List<String> one = info.subList(0, 5);
+            for(String line: one){ // attempted format for arrayList in order to outprint the result...not working???
+                    formattedInfo += line + "\n";
+                }
+                System.out.println(formattedInfo);
                 break;
             case 2:
-                System.out.println(two);
+                List<String> two = info.subList(6, 11);
+                 for(String line: two){ // attempted format for arrayList in order to outprint the result...not working???
+                    formattedInfo += line + "\n";
+                }
+                System.out.println(formattedInfo);
                 break;
             case 3:
-                System.out.println(three);
+                 List<String> three = info.subList(12, 17);
+                 for(String line: three){ // attempted format for arrayList in order to outprint the result...not working???
+                    formattedInfo += line + "\n";
+                }
+                System.out.println(formattedInfo);
                 break;
-           
+           case 4:
+                 List<String> four = info.subList(18, 23);
+                 for(String line: four){ // attempted format for arrayList in order to outprint the result...not working???
+                    formattedInfo += line + "\n";
+                }
+                System.out.println(formattedInfo);
+                break;
+                
             default:
                 formattedInfo = "Invalid Selection";
                 break;
