@@ -36,7 +36,7 @@ public class StartUp {
             }
            
         } catch (IOException ioe) {
-            System.out.println("Houston, we have a problem! reading this file");
+            System.out.println("Error reading this file");
         } finally {
             try {
                 in.close();
@@ -50,28 +50,28 @@ public class StartUp {
         switch (userSelection) {
             case 1:
                 List<String> one = info.subList(0, 5);
-            for(String line: one){ // attempted format for arrayList in order to outprint the result...not working???
+                for(String line: one){ 
                     formattedInfo += line + "\n";
                 }
                 System.out.println(formattedInfo);
                 break;
             case 2:
                 List<String> two = info.subList(6, 11);
-                 for(String line: two){ // attempted format for arrayList in order to outprint the result...not working???
+                 for(String line: two){ 
                     formattedInfo += line + "\n";
                 }
                 System.out.println(formattedInfo);
                 break;
             case 3:
                  List<String> three = info.subList(12, 17);
-                 for(String line: three){ // attempted format for arrayList in order to outprint the result...not working???
+                 for(String line: three){ 
                     formattedInfo += line + "\n";
                 }
                 System.out.println(formattedInfo);
                 break;
            case 4:
                  List<String> four = info.subList(18, 23);
-                 for(String line: four){ // attempted format for arrayList in order to outprint the result...not working???
+                 for(String line: four){ 
                     formattedInfo += line + "\n";
                 }
                 System.out.println(formattedInfo);
