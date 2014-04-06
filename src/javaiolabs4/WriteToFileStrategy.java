@@ -6,14 +6,15 @@
 
 package javaiolabs4;
 
+import java.io.IOException;
+
 /**
  *
- * @author Celeste
+ * @author Travis
  */
-public interface FileAccessStrategy {
+public interface WriteToFileStrategy {
     
-    public abstract void getFile(String file);
-    
+    public abstract void writeFile(String file) throws IOException;
     
     
 }
