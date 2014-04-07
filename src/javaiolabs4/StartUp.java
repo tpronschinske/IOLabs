@@ -17,11 +17,20 @@ public class StartUp {
     
     public static void main(String[] args) throws IOException {
         
-        FileReader fr = new FileReader();
-        fr.getFile("C:\\lab01file.txt");
+//        FileReader fr = new FileReader();
+//        fr.getFile("C:\\lab01file.txt");
+//        
+//        FileWriter fw = new FileWriter();
+//        fw.writeFile("C:\\lab01file.txt");
         
-        FileWriter fw = new FileWriter();
-        fw.writeFile("C:\\lab01file.txt");
+        
+          FileAccessStrategy fileAccess = new FileReader();
+          fileAccess.getFile("C:\\lab01file.txt");
+          
+          WriteToFileStrategy writer = new FileWriter();
+          writer.writeFile("C:\\lab01file.txt");
+          
+          
         
         
     }
