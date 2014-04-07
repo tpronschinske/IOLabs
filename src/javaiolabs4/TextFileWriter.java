@@ -16,7 +16,7 @@ import java.io.IOException;
  *
  * @author Celeste
  */
-public class FileWriter implements WriteToFileStrategy {
+public class TextFileWriter implements WriteToFileStrategy {
 
     @Override
     public void writeFile(String file) throws IOException {
@@ -37,4 +37,7 @@ public class FileWriter implements WriteToFileStrategy {
             System.out.println("Error Writing To File");
         }
     }
+    
+    
+    
 }

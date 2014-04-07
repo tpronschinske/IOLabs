@@ -27,7 +27,7 @@ public class StartUp {
           FileAccessStrategy fileAccess = new FileReader();
           fileAccess.getFile("C:\\lab01file.txt");
           
-          WriteToFileStrategy writer = new FileWriter();
+          WriteToFileStrategy writer = new TextFileWriter();
           writer.writeFile("C:\\lab01file.txt");
           
           
