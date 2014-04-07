@@ -6,6 +6,8 @@
 
 package javaiolabs4;
 
+import java.io.IOException;
+
 /**
  *
  * @author Travis
@@ -13,10 +15,13 @@ package javaiolabs4;
 public class StartUp {
     
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         
         FileReader fr = new FileReader();
         fr.getFile("C:\\lab01file.txt");
+        
+        FileWriter fw = new FileWriter();
+        fw.writeFile("C:\\lab01file.txt");
         
         
     }

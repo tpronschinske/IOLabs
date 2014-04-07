@@ -5,30 +5,36 @@
  */
 
 package javaiolabs4;
-
-import java.io.BufferedWriter;
+import java.io.*;
+import java.util.*;
 import java.io.File;
 import java.io.IOException;
-import java.io.PrintWriter;
+
+
 
 /**
  *
  * @author Celeste
  */
-public class FileWriter implements WriteToFileStrategy{
-    
+public class FileWriter implements WriteToFileStrategy {
+
     @Override
-    public void writeFile(String file) throws IOException{
-          boolean append = true;
-	  File data = new File(file);
-	  PrintWriter out = new PrintWriter(
-						new BufferedWriter(
-						new java.io.FileWriter(data, append)));
-	  System.out.println("Data has been written to file, Location is: " + data.getAbsolutePath());
+    public void writeFile(String file) throws IOException {
+
+        File data = new File(file);
+        boolean append = true;
+        System.out.println("Enter Text To Add To You File");
+        Scanner keyboard = new Scanner(System.in);
+        String text = keyboard.nextLine();
+        PrintWriter out = new PrintWriter(
+                new BufferedWriter(
+                        new java.io.FileWriter(data, append)));
+        try {
+            out.print("\n");
+            out.print(text);   
+            out.close();
+        } catch (Exception e) {
+            System.out.println("Error Writing To File");
+        }
     }
-    
-    public void writeToFile(String data){
-        
-    }
-    
 }
