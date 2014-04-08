@@ -8,18 +8,11 @@ package javaiolabs2;
 
 /**
  *
- * @author 
+ * @author Celeste
  */
-public class StartUp {
- 
- 
-    public static void main(String[] args) {
-
-        
-        FileAccessStrategy fas = new FileReader();
-        fas.getFile("C:\\lab01file.txt");
-        
-       
- }
-
+public interface FileAccessStrategy {
+    
+       public abstract void getFile(String file);
+    
+    
 }
