@@ -22,7 +22,7 @@ public class FileReader implements FileAccessStrategy{
     private int userSelection;
     
     @Override
-    public void getFile(String file) {
+    public void getFile(String file) throws IndexOutOfBoundsException {
         Scanner keyboard = new Scanner(System.in);
         List<String> info = new ArrayList<>();
         File data = new File(file);
@@ -79,6 +79,9 @@ public class FileReader implements FileAccessStrategy{
                 break;
             default:
                 formattedInfo = "Invalid Selection";
+                System.out.println(formattedInfo);
+                System.out.println("Please Enter Record Access Number: ");
+                userSelection = keyboard.nextInt();
                 break;
         }
     }
@@ -88,7 +91,7 @@ public class FileReader implements FileAccessStrategy{
     }
 
     public void setUserSelection(int userSelection) throws IndexOutOfBoundsException{
-        if(userSelection > 4){
+        if(userSelection < 0 || userSelection > 4){
             throw new IndexOutOfBoundsExcpetion("There are only 4 records located in this file. Please Enter A Valid Selection");
         }
         this.userSelection = userSelection;
