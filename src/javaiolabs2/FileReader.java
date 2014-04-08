@@ -19,14 +19,15 @@ import java.util.Scanner;
  */
 public class FileReader implements FileAccessStrategy{
     
+    private int userSelection;
+    
     @Override
     public void getFile(String file) {
         Scanner keyboard = new Scanner(System.in);
         List<String> info = new ArrayList<>();
         File data = new File(file);
         String formattedInfo = "";
-        int userSelection;
-
+        
         BufferedReader in = null;
         try {
             in = new BufferedReader(new java.io.FileReader(data));
@@ -47,7 +48,6 @@ public class FileReader implements FileAccessStrategy{
         }
         System.out.println("Please Enter Record Access Number: ");
         userSelection = keyboard.nextInt();
-
         switch (userSelection) {
             case 1:
                 List<String> one = info.subList(0, 5);
@@ -82,4 +82,20 @@ public class FileReader implements FileAccessStrategy{
                 break;
         }
     }
+    
+    public int getUserSelection() {
+        return userSelection;
+    }
+
+    public void setUserSelection(int userSelection) throws IndexOutOfBoundsException{
+        if(userSelection > 4){
+            throw new IndexOutOfBoundsExcpetion("There are only 4 records located in this file. Please Enter A Valid Selection");
+        }
+        this.userSelection = userSelection;
+    }
+    
+    
+    
+    
 }
+
